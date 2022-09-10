@@ -10,7 +10,7 @@ RSpec.describe GroupsController, type: :request do
       password: '123456',
       password_confirmation: '123456'
     )
-    
+
     login_as(@user, scope: :user)
 
     @group = Group.create(
