@@ -11,11 +11,11 @@ class ExpensesController < ApplicationController
 
   def create
     @group = Group.find(params[:group_id])
-    @expense = Expense.new(entity_params)
+    @expense = Expense.new(expense_params)
     @expense.user_id = current_user.id
     @expense.group_id = @group.id
-    if expense.valid?
-      expense.save
+    if @expense.valid?
+      @expense.save
       redirect_to group_expenses_path
     else
       redirect_to new_group_expense_path, alert: @expense.errors.first.message, status: 400
