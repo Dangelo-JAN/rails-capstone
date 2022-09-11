@@ -7,7 +7,7 @@
 ## Description video
 
 Description for a live demo
-- Description [click here](hhttps://www.loom.com/share/c7b3a9b28b7e4535835c51e377281d9c?focus_title=1&muted=1&from_recorder=1).
+- Description [click here](https://www.loom.com/share/c7b3a9b28b7e4535835c51e377281d9c).
 ## Live Demo
 
 For a live demo
