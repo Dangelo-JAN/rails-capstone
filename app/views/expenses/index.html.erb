@@ -1,0 +1,40 @@
+<div class='navbar'>
+    <div>
+        <%= link_to groups_path, class:"nav-btn" do %>
+          <span class="iconify" data-icon="eva:arrow-back-fill"></span>
+        <% end %>
+    </div>
+
+    <h2 class='nav-login'>TRANSACTIONS</H2>
+
+    <div>
+        <%= link_to destroy_user_session_path, method: :delete, class:"nav-btn" do %>
+          <span class="iconify" data-icon="gridicons:sign-out""></span>
+        <% end %>
+    </div>
+</div>
+
+<div class="center-div">
+  <div class="">
+    <div class="">
+      <div class="">
+        <p class=""> <%=@group.name%></p>
+        <p class="" >  <%=number_to_currency @group.expenses.where(user: current_user, group: @group).sum(:amount)%> </p>
+      </div>
+    </div>
+
+    <div class="">
+      <% @expenses.each do |ex|%>
+        <div class="container">
+            <p class=""> <%=ex.name%> </br> <%=time_tag(ex.created_at,
+                "data-local": "time-ago")%> </p>
+            <p class="" >  <%=number_to_currency ex.amount%> </p>
+        </div>
+      <%end%>
+    </div>
+  </div>
+
+  <div class=" ">
+    <%= button_to 'New transaction', new_group_expense_path(), method: :get , class: "button green-btn" %>
+  </div>
+</div>

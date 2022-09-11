@@ -3,10 +3,15 @@
 
 > Mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
+
+## Description video
+
+Description for a live demo
+- Description [click here](https://www.loom.com/share/c7b3a9b28b7e4535835c51e377281d9c).
 ## Live Demo
 
 For a live demo
-- Heroku [click here](https://.herokuapp.com).
+- Heroku [click here](https://rails-capstone.herokuapp.com/).
 
 ## Built With
 

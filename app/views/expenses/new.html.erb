@@ -1,0 +1,48 @@
+<div class='navbar'>
+    <div>
+        <%= link_to groups_path, class:"nav-btn" do %>
+          <span class="iconify" data-icon="eva:arrow-back-fill"></span>
+        <% end %>
+    </div>
+
+    <h2 class='nav-login'>NEW TRANSACTION</H2>
+
+    <div>
+        <%= link_to destroy_user_session_path, method: :delete, class:"nav-btn" do %>
+          <span class="iconify" data-icon="gridicons:sign-out""></span>
+        <% end %>
+    </div>
+</div>
+
+<div class="center-div">
+  <%= form_with(model: [@group, @expense]) do |form| %>
+    <% if @expense.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(@expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+        <ul>
+          <% @expense.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name, class: "button input" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :amount, style: "display: block" %>
+      <%= form.number_field :amount, step: :any, class: "button input" %>
+    </div>
+    
+    <div class="btn">
+      <%= form.submit "Create transaction", class: "button green-btn" %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= link_to "Back to groups", groups_path %>
+  </div>
+</div>

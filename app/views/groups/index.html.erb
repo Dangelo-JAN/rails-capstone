@@ -1,0 +1,26 @@
+<%= render '/navbar' %>
+
+<div class="center-div">
+  <div class="groups">
+    <% @groups.each do |g| %>
+      <div id="<%= dom_id g %>" class="group-container">
+
+        <img src="<%= g.icon %>" alt="<%= g.name %>" class="group-avatar">
+        <p>
+          <%= link_to g.name, group_expenses_path(g.id) %>
+        </p>
+        <p>
+          Transactions:
+          <%= g.total_expenses_count %>
+        </p>
+
+      </div>
+    <% end %>
+  </div>
+
+  <div class="center-div green-btn btn-container">
+    <div class=" center-div button green-btn btn-new">
+      <%= link_to "New group", new_group_path, class: "link-btn" %>
+    </div>
+  </div>
+</div>

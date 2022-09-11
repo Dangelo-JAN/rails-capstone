@@ -1,0 +1,35 @@
+<%= render '/navbar' %>
+
+<div class="center-div">
+  <%= form_with(model: @group) do |f| %>
+    <% if @group.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+        <ul>
+          <% @group.errors.each do |e| %>
+            <li><%= e.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :name, style: "display: block" %>
+      <%= f.text_field :name, class: "button input" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :icon, style: "display: block" %>
+      <%= f.text_field :icon, class: "button input" %>
+    </div>
+
+    <%= f.submit "Create Group", class: "button green-btn" %>
+  <% end %>
+
+  <br>
+
+  <div>
+    <%= link_to "Back to groups", groups_path %>
+  </div>
+</div>
