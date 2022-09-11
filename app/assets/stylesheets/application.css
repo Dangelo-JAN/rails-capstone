@@ -1,15 +1,90 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url('https://fonts.googleapis.com/css?family=proxima-nova:thin,extra-light,light,bold,100,200,300,400,500,600,700,800');
+
+*,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+}
+
+html {
+  background-color: #eff3f4;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/*  User index   */
+.center-div {
+  justify-content: center;
+  text-align: center;
+}
+
+.user-index-container {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app-title {
+  font-size: 5rem;
+}
+
+.button {
+  width: 90vw;
+  height: 2rem;
+  margin: 0.5rem 0;
+  align-items: flex-end;
+  color: #fff;
+  border: none !important;
+}
+
+.login-btn {
+  background-color: #3778c2;
+}
+
+.signup-btn {
+  background-color: #808080;
+}
+
+.green-btn {
+  background-color: #5fb523;
+}
+
+.input {
+  color: #000;
+  background-color: #fff;
+}
+
+/* Navbar style */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: #3778c2;
+  margin-bottom: 25px;
+}
+
+.nav-login {
+  color: white;
+  font-size: 1.2em;
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+.nav-btn {
+  color: #fff;
+  font-size: 1.5em;
+  padding: 0 10px;
+}

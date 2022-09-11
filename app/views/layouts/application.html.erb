@@ -8,11 +8,18 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
   </head>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%if current_user%>
+      <nav>
+        <%= link_to "Categories", groups_path, class:"log-in" %>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"sign-up" %>
+      </nav>
+    <% end %>
     <%= yield %>
   </body>
 </html>
