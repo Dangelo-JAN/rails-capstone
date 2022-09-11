@@ -1,21 +1,26 @@
-<p style="color: green"><%= notice %></p>
+<%= render '/navbar' %>
 
-<div class="groups">
-  <% @groups.each do |g| %>
-    <div id="<%= dom_id g %>" class="group-container">
+<div class="center-div">
+  <div class="groups">
+    <% @groups.each do |g| %>
+      <div id="<%= dom_id g %>" class="group-container">
 
-      <img src="<%= g.icon %>" alt="<%= g.name %>" class="group-avatar">
-      <p>
-        <%= link_to g.name, group_expenses_path(g.id) %>
-      </p>
-      <p>
-        Transactions:
-        <%= g.total_expenses_count %>
-      </p>
+        <img src="<%= g.icon %>" alt="<%= g.name %>" class="group-avatar">
+        <p>
+          <%= link_to g.name, group_expenses_path(g.id) %>
+        </p>
+        <p>
+          Transactions:
+          <%= g.total_expenses_count %>
+        </p>
 
+      </div>
+    <% end %>
+  </div>
+
+  <div class="center-div green-btn btn-container">
+    <div class=" center-div button green-btn btn-new">
+      <%= link_to "New group", new_group_path, class: "link-btn" %>
     </div>
-  <% end %>
+  </div>
 </div>
-
-<%= link_to "New group", new_group_path, class: 'btn-tertiary' %>
-<%= link_to "Log out", destroy_user_session_path, class: 'btn-tertiary' %>
